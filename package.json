@@ -1,11 +1,11 @@
 {
-  "name": "@aisouler/gkd_subscription",
-  "version": "0.0.129",
+  "name": "@lx/gkd_subscription",
+  "version": "0.0.1",
   "type": "module",
   "gkd": {
     "outDir": "dist",
-    "file": "AIsouler_gkd.json5",
-    "versionFile": "AIsouler_gkd.version.json5",
+    "file": "LX_gkd.json5",
+    "versionFile": "LX_gkd.version.json5",
     "changelog": "CHANGELOG.md",
     "README.md": "README.md"
   },

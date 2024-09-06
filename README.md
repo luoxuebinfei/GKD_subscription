@@ -1,4 +1,4 @@
-# @AIsouler/GKD_subscription
+# @LX/GKD_subscription
 
 ---
 
@@ -15,21 +15,21 @@
 
 **订阅链接：**
 
-- npmmirror源（国内）
+- Github镜像源（国内）
 
 ```txt
-https://registry.npmmirror.com/@aisouler/gkd_subscription/latest/files/dist/AIsouler_gkd.json5
+https://mirror.ghproxy.com/https://raw.githubusercontent.com/luoxuebinfei/GKD_subscription/beta/dist/LX_gkd.json5
 ```
 
 - GitHub源
 
 ```txt
-https://raw.githubusercontent.com/AIsouler/GKD_subscription/main/dist/AIsouler_gkd.json5
+https://raw.githubusercontent.com/luoxuebinfei/GKD_subscription/beta/dist/LX_gkd.json5
 ```
 
-当前版本: v129
+当前版本: v1
 
-当前订阅文件已适配 786 个应用，共有 1861 应用规则组，3 全局规则组
+当前订阅文件已适配 787 个应用，共有 1863 应用规则组，3 全局规则组
 
 查看 [适配 APP 列表](./dist/README.md)
 
@@ -44,11 +44,3 @@ https://raw.githubusercontent.com/AIsouler/GKD_subscription/main/dist/AIsouler_g
 ## 感谢以下项目
 
 [gkd-kit/subscription](https://github.com/gkd-kit/subscription)
-
-## 感谢以下开发者的贡献
-
-![img](https://contrib.rocks/image?repo=AIsouler/GKD_subscription&_v=129)
-
-## Star History
-
-[![Star History Chart](https://api.star-history.com/svg?repos=AIsouler/GKD_subscription&type=Date)](https://star-history.com/#AIsouler/GKD_subscription&Date)
