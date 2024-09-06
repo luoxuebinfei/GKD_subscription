@@ -1,4 +1,4 @@
-# @LX/GKD_subscription
+# @AIsouler/GKD_subscription
 
 ---
 
@@ -15,16 +15,16 @@
 
 **订阅链接：**
 
-- Github镜像源（国内）
+- npmmirror源（国内）
 
 ```txt
-https://mirror.ghproxy.com/https://raw.githubusercontent.com/luoxuebinfei/GKD_subscription/beta/dist/LX_gkd.json5
+https://registry.npmmirror.com/@aisouler/gkd_subscription/latest/files/dist/AIsouler_gkd.json5
 ```
 
 - GitHub源
 
 ```txt
-https://raw.githubusercontent.com/luoxuebinfei/GKD_subscription/beta/dist/LX_gkd.json5
+https://raw.githubusercontent.com/AIsouler/GKD_subscription/main/dist/AIsouler_gkd.json5
 ```
 
 当前版本: v--VERSION--
@@ -44,3 +44,11 @@ https://raw.githubusercontent.com/luoxuebinfei/GKD_subscription/beta/dist/LX_gkd
 ## 感谢以下项目
 
 [gkd-kit/subscription](https://github.com/gkd-kit/subscription)
+
+## 感谢以下开发者的贡献
+
+![img](https://contrib.rocks/image?repo=AIsouler/GKD_subscription&_v=--VERSION--)
+
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=AIsouler/GKD_subscription&type=Date)](https://star-history.com/#AIsouler/GKD_subscription&Date)
