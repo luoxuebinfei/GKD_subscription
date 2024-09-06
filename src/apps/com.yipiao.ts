@@ -5,16 +5,20 @@ export default defineGkdApp({
   name: '智行火车票',
   groups: [
     {
-      name: '开屏广告',
       key: 0,
-      actionMaximum: 1,
-      order: -10,
+      name: '开屏广告',
       matchTime: 10000,
+      actionMaximum: 1,
       resetMatch: 'app',
       rules: [
         {
-          matches: ['[text^="跳过"][text.length<=5]'],
-          snapshotUrls: ['https://i.gkd.li/i/16896514'],
+          position: {
+            left: 'width * 0.8759',
+            top: 'width * 2.0519',
+          },
+          matches: '[desc="广告素材"][visibleToUser=true]',
+          exampleUrls: 'https://e.gkd.li/375bf789-95f6-4646-b433-3d3b25dda58a',
+          snapshotUrls: 'https://i.gkd.li/i/16896514',
         },
       ],
     },
