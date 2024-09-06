@@ -27,9 +27,9 @@ https://mirror.ghproxy.com/https://raw.githubusercontent.com/luoxuebinfei/GKD_su
 https://raw.githubusercontent.com/luoxuebinfei/GKD_subscription/beta/dist/LX_gkd.json5
 ```
 
-当前版本: v1
+当前版本: v2
 
-当前订阅文件已适配 787 个应用，共有 1863 应用规则组，3 全局规则组
+当前订阅文件已适配 787 个应用，共有 1862 应用规则组，3 全局规则组
 
 查看 [适配 APP 列表](./dist/README.md)
 
