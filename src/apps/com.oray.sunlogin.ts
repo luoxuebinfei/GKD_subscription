@@ -5,6 +5,22 @@ export default defineGkdApp({
   name: '向日葵远程控制',
   groups: [
     {
+      key: -1,
+      name: '开屏广告',
+      matchTime: 10000,
+      actionMaximum: 1,
+      resetMatch: 'app',
+      priorityTime: 10000,
+      rules: [
+        {
+          fastQuery: true,
+          matches: '[vid="tobid_splash_skip_text"][visibleToUser=true]',
+          exampleUrls: 'https://e.gkd.li/f41b0367-9161-4329-987d-b2d0ad9ec233',
+          snapshotUrls: 'https://i.gkd.li/i/17004919',
+        },
+      ],
+    },
+    {
       key: 0,
       name: '全屏广告-瓜子会员弹窗',
       desc: '点击右上角[关闭]',
@@ -36,13 +52,20 @@ export default defineGkdApp({
     },
     {
       key: 2,
-      name: '功能类-设备列表-卡片广告',
-      activityIds: 'com.oray.sunlogin.application.Main',
+      name: '局部广告-卡片广告',
       fastQuery: true,
-      rules: '[id="com.oray.sunlogin:id/fl_close_advertise"]',
-      snapshotUrls: 'https://i.gkd.li/i/13207785',
-      exampleUrls:
-        'https://github.com/gkd-kit/inspect/assets/38517192/071e5512-e1aa-4a8c-8440-009d6f0f35ff',
+      rules: [
+        {
+          activityIds: 'com.oray.sunlogin.application.Main',
+          matches:
+            '[id="com.oray.sunlogin:id/fl_close_advertise" || vid="iv_dislike"][visibleToUser=true]',
+          exampleUrls: 'https://e.gkd.li/2cad526b-1691-45e9-826b-eb92299cb8ee',
+          snapshotUrls: [
+            'https://i.gkd.li/i/13207785',
+            'https://i.gkd.li/i/17159821',
+          ],
+        },
+      ],
     },
     {
       key: 3,

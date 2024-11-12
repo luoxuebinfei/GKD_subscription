@@ -127,8 +127,11 @@ export default defineGkdApp({
           key: 3,
           activityIds: 'com.sina.weibo.feed.MPDialogActivity',
           matches:
-            '[text^="今日签到"] <n * + @TextView[visibleToUser=true] <<n [vid="container"]',
-          snapshotUrls: 'https://i.gkd.li/i/14969848',
+            'WebView[text="Wbox"] > View[childCount=1] > View[childCount=2] > @TextView[clickable=true][visibleToUser=true][childCount=0][index=1][width<200] <<n [vid="container"]',
+          snapshotUrls: [
+            'https://i.gkd.li/i/14969848',
+            'https://i.gkd.li/i/16944794',
+          ],
         },
         {
           key: 4,
@@ -248,17 +251,14 @@ export default defineGkdApp({
         {
           key: 0,
           activityIds: 'com.sina.weibo.feed.DetailWeiboActivity',
-          matches: '[text="广告"] + [id="com.sina.weibo:id/iv_close_icon"]',
+          matches: '[vid="ll_close"][visibleToUser=true]',
           snapshotUrls: 'https://i.gkd.li/i/13852321',
         },
         {
           key: 1,
           activityIds: 'com.sina.weibo.feed.DetailWeiboActivity',
           matches: '[vid="corner_marker_view"] >2 [vid="right_top_tag"]',
-          snapshotUrls: [
-            'https://i.gkd.li/i/12673051',
-            'https://i.gkd.li/i/14210775',
-          ],
+          snapshotUrls: 'https://i.gkd.li/i/14210775',
         },
         {
           key: 2,
@@ -287,7 +287,7 @@ export default defineGkdApp({
 
         // 预留key
         {
-          preKeys: 0,
+          preKeys: [0],
           key: 90,
           name: '点击"不感兴趣"',
           activityIds: 'com.sina.weibo.feed.DetailWeiboActivity',

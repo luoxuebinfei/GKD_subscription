@@ -521,7 +521,7 @@ const appDeprecatedKeys: RawDeprecatedKeysSetting[] = [
   {
     id: 'tv.danmaku.bili',
     name: '哔哩哔哩',
-    deprecatedKeys: [3, 5],
+    deprecatedKeys: [1, 3, 5],
   },
   {
     id: 'com.chunqiu.ah',
@@ -557,6 +557,36 @@ const appDeprecatedKeys: RawDeprecatedKeysSetting[] = [
     id: 'com.paokeji.yiqu',
     name: '喵趣漫画',
     deprecatedKeys: [1],
+  },
+  {
+    id: 'com.huawei.android.thememanager',
+    name: '华为主题',
+    deprecatedKeys: [3, 4, 5, 6],
+  },
+  {
+    id: 'com.ximalaya.ting.android',
+    name: '喜马拉雅',
+    deprecatedKeys: [9],
+  },
+  {
+    id: 'com.zjwh.android_wh_physicalfitness',
+    name: '运动世界校园',
+    deprecatedKeys: [2, 3, 4, 9],
+  },
+  {
+    id: 'com.xunmeng.pinduoduo',
+    name: '拼多多',
+    deprecatedKeys: [3, 4, 5, 7, 13, 14, 15, 18],
+  },
+  {
+    id: 'com.mihoyo.hyperion',
+    name: '米游社',
+    deprecatedKeys: [4, 5],
+  },
+  {
+    id: 'com.miui.packageinstaller',
+    name: '应用包管理组件',
+    deprecatedKeys: [8, 9, 10, 11, 12],
   },
 ];
 

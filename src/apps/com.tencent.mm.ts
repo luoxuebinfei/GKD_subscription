@@ -143,7 +143,6 @@ export default defineGkdApp({
       fastQuery: true,
       matchTime: 10000,
       actionMaximum: 1,
-      resetMatch: 'activity',
       activityIds: [
         'com.tencent.mm.plugin.webwx.ui.ExtDeviceWXLoginUI',
         'com.tencent.mm.ui.LauncherUI',
@@ -183,7 +182,6 @@ export default defineGkdApp({
       fastQuery: true,
       matchTime: 10000,
       actionMaximum: 1,
-      resetMatch: 'activity',
       activityIds: 'com.tencent.mm.plugin.webview.ui.tools.MMWebViewUI',
       rules: [
         {
@@ -241,7 +239,8 @@ export default defineGkdApp({
     {
       key: 7,
       name: '功能类-自动选中发送原图',
-      desc: '图片和视频选择器-自动选中底部中间的发送原图',
+      desc: '自动选中底部中间的发送原图，可手动取消勾选',
+      actionMaximum: 1,
       activityIds: [
         'com.tencent.mm.plugin.gallery.ui.AlbumPreviewUI',
         'com.tencent.mm.plugin.gallery.ui.ImagePreviewUI',
@@ -251,11 +250,17 @@ export default defineGkdApp({
           key: 1,
           fastQuery: true,
           excludeVersionNames: '8.0.15',
-          matches: '@ImageButton[desc="未选中,原图,复选框"] + [text="原图"]',
+          matches:
+            '@ImageButton[desc="未选中,原图,复选框"][visibleToUser=true] + [text="原图"]',
+          exampleUrls: [
+            'https://e.gkd.li/32dc0943-e85f-416d-bb01-6ed610d4bdd8',
+            'https://e.gkd.li/93d41161-ab69-4c2d-83bb-637d7292f5e6',
+          ],
           snapshotUrls: [
-            'https://i.gkd.li/i/12686641', // 未选中
-            'https://i.gkd.li/i/12840865', // 未选中
-            'https://i.gkd.li/i/12686640', // 已选中
+            'https://i.gkd.li/i/16987145', // 未选中
+            'https://i.gkd.li/i/16987144', // 未选中
+            'https://i.gkd.li/i/16987141', // 已选中
+            'https://i.gkd.li/i/16987147', // 已选中
           ],
         },
         {
@@ -270,7 +275,7 @@ export default defineGkdApp({
       key: 9,
       name: '功能类-自动查看原图',
       desc: '自动点击底部左侧[查看原图]按钮',
-      activityIds: 'com.tencent.mm.ui.chatting.gallery.ImageGalleryUI',
+      activityIds: ['.ui.chatting.gallery.ImageGalleryUI', '.ui.LauncherUI'],
       rules: [
         {
           key: 0,
@@ -279,7 +284,10 @@ export default defineGkdApp({
           matches: 'Button[text^="查看原图"][clickable=true]',
           exampleUrls:
             'https://m.gkd.li/57941037/6bb9e68a-43f5-4482-96b1-899cc86fef32',
-          snapshotUrls: 'https://i.gkd.li/i/13523031',
+          snapshotUrls: [
+            'https://i.gkd.li/i/13523031',
+            'https://i.gkd.li/i/17698956',
+          ],
         },
         {
           key: 1,
@@ -298,7 +306,7 @@ export default defineGkdApp({
       matchTime: 10000,
       forcedTime: 10000,
       // actionMaximum: 1, // 经常需要点2次，首次点击过早大概率跳不过
-      // resetMatch: 'activity',
+      priorityTime: 10000,
       activityIds: [
         'com.tencent.mm.plugin.appbrand.ui.AppBrandUI',
         'com.tencent.mm.plugin.appbrand.launching.AppBrandLaunchProxyUI',
@@ -325,7 +333,6 @@ export default defineGkdApp({
       fastQuery: true,
       matchTime: 10000,
       actionMaximum: 1,
-      resetMatch: 'activity',
       activityIds: 'com.tencent.mm.ui.LauncherUI',
       rules: '[text="打开网页版文件传输助手"] + * > Button[text="打开"]',
       snapshotUrls: 'https://i.gkd.li/i/12793745',
@@ -558,26 +565,12 @@ export default defineGkdApp({
       rules: [
         {
           key: 0,
-          excludeMatches:
-            'Button[desc="使用密码"] < * <2 * >6 [vid="kinda_button_impl_wrapper"][desc="支付"]',
-          matches: '[vid="kinda_button_impl_wrapper"][desc="立即支付"]',
-          exampleUrls:
-            'https://m.gkd.li/57941037/13fd1e89-6d75-4efe-90d6-91687de8c9b1',
-          snapshotUrls: [
-            'https://i.gkd.li/i/15144571',
-            'https://i.gkd.li/i/15360745',
-          ],
-        },
-        {
-          preKeys: [0],
-          key: 1,
           matches:
-            'Button[desc="使用密码"] < * <2 * >6 [vid="kinda_button_impl_wrapper"][desc="支付"]',
-          exampleUrls:
-            'https://m.gkd.li/57941037/69380aa0-e6d2-4ea4-8ee7-6a1e45889e6c',
+            'ViewGroup + ViewGroup > ViewGroup > [vid="kinda_button_impl_wrapper"][desc="支付"]',
           snapshotUrls: [
             'https://i.gkd.li/i/15144570',
-            'https://i.gkd.li/i/15360744',
+            'https://i.gkd.li/i/15144571',
+            'https://i.gkd.li/i/15360745',
           ],
         },
       ],
@@ -585,10 +578,11 @@ export default defineGkdApp({
     {
       key: 35,
       name: '分段广告-订阅号消息内容-广告',
-      desc: '点击下拉框-[不感兴趣]-[与我无关]',
+      desc: '点击下拉框-[关闭此广告]/[不感兴趣]-[与我无关]',
       activityIds: [
-        'com.tencent.mm.plugin.brandservice.ui.timeline.preload.ui.TmplWebView', //调整为TmplWebView, 同时兼容多种ID
-        'com.tencent.mm.plugin.webview.ui.tools.fts.MMSosWebViewUI',
+        '.plugin.brandservice.ui.timeline.preload.ui.TmplWebView', //调整为TmplWebView, 同时兼容多种ID
+        '.plugin.webview.ui.tools.fts.MMSosWebViewUI',
+        '.plugin.webview.ui.tools.MMWebViewUI',
       ],
       rules: [
         {
@@ -598,7 +592,7 @@ export default defineGkdApp({
             '[text="不感兴趣" || text="与我无关" || text="感谢你的反馈"][visibleToUser=true]',
           ],
           matches:
-            '@[clickable=true][visibleToUser=true] > TextView[text="广告"][visibleToUser=true]', // 某些微信版本上该节点的`clickable=false`
+            '@[clickable=true][visibleToUser=true] > TextView[text^="广告"][visibleToUser=true]', // 某些微信版本上该节点的`clickable=false`
           exampleUrls: [
             'https://e.gkd.li/e73bb653-cc79-455c-958b-38aff6687c37',
             'https://e.gkd.li/5915f80b-66b9-4441-9d36-3caa3fe1be58',
@@ -607,25 +601,44 @@ export default defineGkdApp({
             'https://i.gkd.li/i/12642232', // ui.TmplWebViewMMUI
             'https://i.gkd.li/i/13199281', // ui.TmplWebViewTooLMpUI
             'https://i.gkd.li/i/14006180', // com.tencent.mm.plugin.webview.ui.tools.fts.MMSosWebViewUI
-            'https://i.gkd.li/i/15198464', // 使用excludeMatches防止在文章末尾广告关闭后误触
+            'https://i.gkd.li/i/17093010', // com.tencent.mm.plugin.webview.ui.tools.MMWebViewUI
             'https://i.gkd.li/i/16796663', // 内容尾部广告
             'https://i.gkd.li/i/16796725', // 内容中部广告
             'https://i.gkd.li/i/16798663', // clickable=false，使用clickable=true避免误触
             'https://i.gkd.li/i/15198455', // 无id
+            'https://i.gkd.li/i/17276697', // text="广告 "，有空格
+          ],
+          excludeSnapshotUrls: [
+            'https://i.gkd.li/i/15198464', // 防止在文章末尾广告关闭后误触
           ],
         },
         {
-          // 第二段
+          // 第二段-有“关闭此广告”按钮，则直接关闭该广告
+          preKeys: [0],
+          key: 20,
+          matches: '[text="关闭此广告"][clickable=true][visibleToUser=true]',
+          snapshotUrls: [
+            'https://i.gkd.li/i/16796729', // 内容中部广告
+            'https://i.gkd.li/i/17113565', // 在某些情况下，点击“不感兴趣”会导致无法执行下一步操作，因此点击“关闭此广告”
+          ],
+        },
+        {
+          // 第二段-无“关闭此广告”按钮，则点击“不感兴趣”，需继续执行第三段
           preKeys: [0],
           key: 25,
-          excludeMatches: '[text="感谢你的反馈"][visibleToUser=true]',
+          excludeMatches: [
+            '[text="感谢你的反馈"][visibleToUser=true]',
+            '[text="关闭此广告"][clickable=true][visibleToUser=true]',
+          ],
           matches: '[text="不感兴趣"][clickable=true][visibleToUser=true]', // 为确保能够关闭尾部广告，此处点击“不感兴趣”而非“关闭此广告”
           snapshotUrls: [
             'https://i.gkd.li/i/16796666', // 内容尾部广告
-            'https://i.gkd.li/i/16796729', // 内容中部广告
-            'https://i.gkd.li/i/15061424', // 使用excludeMatches防止在文章末尾广告关闭后误触
             'https://i.gkd.li/i/16798661', // clickable=false，使用clickable=true避免误触
             'https://i.gkd.li/i/15198459', // 无id
+          ],
+          excludeSnapshotUrls: [
+            'https://i.gkd.li/i/15061424', // 使用excludeMatches防止在文章末尾广告关闭后误触'
+            'https://i.gkd.li/i/16796729', // 内容中部广告，若同时存在“关闭此广告”与“不感兴趣”，则点击前者
           ],
         },
         {
@@ -652,6 +665,31 @@ export default defineGkdApp({
           matches: '[text^="查看原视频"][visibleToUser=true]',
           exampleUrls: 'https://e.gkd.li/5332aff9-05bb-4b44-b832-5e2d9b1c1270',
           snapshotUrls: 'https://i.gkd.li/i/16833732',
+        },
+      ],
+    },
+    {
+      key: 37,
+      name: '全屏广告-小程序弹窗广告',
+      desc: '点击关闭',
+      matchTime: 20000,
+      // actionMaximum: 1,
+      actionCd: 300, // 有时候需要点击多次
+      actionDelay: 300, // 过早触发有概率无效
+      rules: [
+        {
+          fastQuery: true,
+          activityIds: 'com.tencent.mm.plugin.appbrand.ui.AppBrandUI',
+          excludeMatches: '[text="跳过"][visibleToUser=true]', // 防止提前触发
+          matches:
+            '@ImageView[visibleToUser=true][childCount=0][text=null] < FrameLayout[childCount=1] < FrameLayout[childCount=1] <2 FrameLayout[childCount=2] - FrameLayout >4 [text="广告"]',
+          exampleUrls: 'https://e.gkd.li/d2b12af6-c204-4da7-8553-4765ef8b8c31',
+          snapshotUrls: [
+            'https://i.gkd.li/i/13459614',
+            'https://i.gkd.li/i/16943989',
+            'https://i.gkd.li/i/16920797',
+          ],
+          excludeSnapshotUrls: 'https://i.gkd.li/i/16958795',
         },
       ],
     },

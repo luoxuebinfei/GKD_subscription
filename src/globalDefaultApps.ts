@@ -79,6 +79,9 @@ export const blackListAppIDs: string[] = [
   'org.telegram.group', // Turrit
   'com.android.chrome', // Chrome
   'org.mozilla.firefox', // Firefox
+  'org.mozilla.firefox_beta', // Firefox Beta
+  'org.mozilla.fenix', // Firefox Nightly
+  'org.mozilla.focus', // Firefox Focus
   'com.google.android.youtube', // YouTube 开屏广告在 https://i.gkd.li/i/15765176 误触
   'com.xunmeng.pinduoduo', // 拼多多
   'com.byyoung.setting', //爱玩机工具箱
@@ -98,6 +101,26 @@ export const blackListAppIDs: string[] = [
   'com.sonkins.tguitar', // Guitar Tuner
   'com.eumlab.android.prometronome', // Pro Metronome
   'cn.edu.buaa.wxwork', // 智慧北航
+  'io.github.muntashirakon.AppManager', // App Manager
+  'moe.shizuku.redirectstorage', // 存储空间隔离
+  'web1n.stopapp', // 小黑屋
+  'com.shatyuka.zhiliao', // 知了
+  'com.adobe.reader', // Adobe Acrobat
+  'org.wikipedia', // 维基百科
+  'org.kiwix.kiwixmobile', // Kiwix
+  'com.brakefield.painter', // Infinte Painter
+  'me.iacn.biliroaming', // 哔哩漫游
+  'com.termux', // Termux
+  'oss.krtirtho.spotube', // Spotube
+  'com.merxury.blocker', // Blocker
+  'moe.minamigo.miuigms', // MIUIGMS
+  'mufanc.tools.applock', // AppLock
+  'com.gankes.tsbattery', // TSBattery
+  'com.oasisfeng.nevo.xposed', // 女娲石
+  'com.reddit.frontpage', // Reddit
+  'com.ghostflying.locationreportenabler', // LocationReportEnabler
+  'com.zyc.zcontrol', // ZControl
+  'org.nobody.multitts', // MultiTTS
 
   'com.canghai.haoka',
   'com.xy.td',
@@ -133,7 +156,6 @@ export const blackListAppIDs: string[] = [
   'Hook.JiuWu.Xp',
   'me.weishu.kernelsu',
   'com.franco.kernel',
-  'com.molink.john.hummingbird',
   'com.samsung.android.themedesigner',
   'com.samsung.android.game.gamehome',
   'com.tencent.tmgp.sgame',
@@ -154,6 +176,7 @@ export const blackListAppIDs: string[] = [
   'com.dna.tools',
   'flar2.devcheck',
   'com.gstarmc.android',
+  'com.github.capntrips.kernelflasher',
 
   // 系统自带非系统应用
   // 小米
@@ -173,6 +196,10 @@ export const blackListAppIDs: string[] = [
   'com.duokan.phone.remotecontroller', // 万能遥控
   'com.mfashiongallery.emag', // 小米画报
   'com.miui.thirdappassistant', // 三方应用异常分析
+
+  'com.xiaomi.wpslauncher', // WPS Office PC
+  'com.xiaomi.cajlauncher', // CAJViewer PC
+  'com.mi.car.padapp', // 小米汽车扩展屏
 
   // 三星
   'com.samsung.android.app.cameraassistant',
@@ -246,7 +273,6 @@ export const whiteListAppIDs: string[] = [];
 // 开屏广告白名单
 export const openAdWhiteListAppIDs = new Set([
   ...whiteListAppIDs,
-  'com.bbk.theme', // i 主题
   'com.bbk.appstore', // vivo应用商店
   'com.miui.player', // 小米音乐
   'com.tencent.southpole.appstore', // 黑鲨应用市场

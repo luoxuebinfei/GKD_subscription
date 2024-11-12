@@ -98,12 +98,13 @@ export default defineGkdApp({
           activityIds: [
             'com.youdao.dict.vip.activity.RecallSevenDayVipActivity',
             'com.youdao.dict.vip.activity.SecondShowNewUserSevenDayVipActivity',
+            '.activity.DictQueryActivity',
           ],
-          matches:
-            'ImageView[id="com.youdao.dict:id/iv_close"][clickable=true]',
+          matches: 'ImageView[vid="iv_close"][clickable=true]',
           snapshotUrls: [
             'https://i.gkd.li/i/13263706',
             'https://i.gkd.li/i/14381735',
+            'https://i.gkd.li/i/16929322',
           ],
         },
         {
@@ -154,51 +155,36 @@ export default defineGkdApp({
       key: 8,
       name: '局部广告-卡片广告',
       desc: '点击关闭',
+      fastQuery: true,
       rules: [
         {
           key: 0,
-          name: '右下角悬浮卡片',
-          fastQuery: true,
           activityIds: [
             'com.youdao.dict.activity.MainActivity',
             'com.youdao.dict.activity.DictQueryActivity',
           ],
-          matches: '[vid="aivClose"][visibleToUser=true]',
+          matches:
+            '[vid="aivClose" || vid="course_one_course_close"][visibleToUser=true]',
           exampleUrls:
             'https://m.gkd.li/57941037/e365b983-15c7-4ac7-acd7-9d7be4c45160',
           snapshotUrls: [
             'https://i.gkd.li/i/14468564',
             'https://i.gkd.li/i/14468628', // visibleToUser=true 防止在此页面选中屏幕外节点
             'https://i.gkd.li/i/14567234',
+            'https://i.gkd.li/i/14895765',
+            'https://i.gkd.li/i/17082441',
           ],
         },
         {
           key: 1,
-          name: '主页卡片广告',
-          fastQuery: true,
           activityIds: 'com.youdao.dict.activity.MainActivity',
-          matches: '[vid="home_ad_close"][clickable=true]',
-          snapshotUrls: 'https://i.gkd.li/i/14009705',
-        },
-        {
-          key: 2,
-          name: '单词页面下方广告',
-          fastQuery: true,
-          activityIds: 'com.youdao.dict.activity.MainActivity',
-          matches: '[vid="course_four_course_close"]',
-          exampleUrls:
-            'https://m.gkd.li/57941037/4045988d-93bb-4aad-80dd-f14da296a214',
-          snapshotUrls: 'https://i.gkd.li/i/14559287',
-        },
-        {
-          key: 3,
-          name: '单词页面下方学习技巧',
-          fastQuery: true,
-          activityIds: 'com.youdao.dict.activity.MainActivity',
-          matches: '[vid="course_one_course_close"]',
-          exampleUrls:
-            'https://m.gkd.li/57941037/0c033574-4bae-4bcc-bcf9-901ce8b5061b',
-          snapshotUrls: 'https://i.gkd.li/i/14895765',
+          matches:
+            '[vid="home_ad_close" || vid="course_four_course_close" || vid="promotion_close_zone"][visibleToUser=true]',
+          snapshotUrls: [
+            'https://i.gkd.li/i/14009705',
+            'https://i.gkd.li/i/14559287',
+            'https://i.gkd.li/i/17115693',
+          ],
         },
       ],
     },

@@ -11,6 +11,7 @@ export default defineGkdApp({
       matchTime: 10000,
       actionMaximum: 1,
       resetMatch: 'app',
+      priorityTime: 10000,
       excludeActivityIds: [
         'com.tencent.mobileqq.activity.ChatActivity', // 在聊天界面禁用
         'com.tencent.mobileqq.search.activity.UniteSearchActivity', // 在搜索页面禁用
@@ -85,6 +86,7 @@ export default defineGkdApp({
             'com.qzone.reborn.feedx.activity.QZoneFriendFeedXActivity',
           ],
           matches: 'View[desc="广告"] + ImageView[clickable=true]',
+          exampleUrls: 'https://e.gkd.li/21ede3d4-b1b7-4e85-b4d3-2c4876420a71',
           snapshotUrls: [
             'https://i.gkd.li/i/12847842',
             'https://i.gkd.li/i/13787345',
@@ -238,6 +240,7 @@ export default defineGkdApp({
       name: '功能类-扫一扫登录确认',
       desc: '自动点击登录。包括 PC 登录确认、QQ 互联登录确认。',
       fastQuery: true,
+      actionMaximum: 1,
       rules: [
         {
           key: 1,
@@ -307,7 +310,8 @@ export default defineGkdApp({
     {
       key: 10,
       name: '功能类-自动勾选原图',
-      desc: '发送图片时自动勾选原图',
+      desc: '发送图片时自动勾选原图，可手动取消勾选',
+      actionMaximum: 1,
       fastQuery: true,
       activityIds: [
         'com.tencent.mobileqq.activity.SplashActivity',
@@ -363,6 +367,7 @@ export default defineGkdApp({
       name: '开屏广告-QQ小程序开屏广告',
       desc: '点击右下角跳过',
       actionMaximum: 1,
+      priorityTime: 10000,
       activityIds: [
         'com.tencent.mobileqq.mini.appbrand.ui.AppBrandUI',
         'com.tencent.mobileqq.activity.miniaio.MiniChatActivity',
@@ -446,13 +451,14 @@ export default defineGkdApp({
           key: 0,
           activityIds: 'com.tencent.mobileqq.activity.SplashActivity',
           matches:
-            '@ImageView[clickable=true] <n * > [text*="版本更新" || text*="有新版本"]',
+            '@ImageView[clickable=true][text=null] <n * > [text*="版本更新" || text*="新版本"][text.length<15]',
           snapshotUrls: [
-            'https://i.gkd.li/i/13255493', //desc值为null快照
+            'https://i.gkd.li/i/13255493',
             'https://i.gkd.li/i/13843140',
             'https://i.gkd.li/i/14138340',
             'https://i.gkd.li/i/13931212',
-            'https://i.gkd.li/i/16323755', // add [text*="有新版本"]
+            'https://i.gkd.li/i/16323755',
+            'https://i.gkd.li/i/17529150',
           ],
         },
       ],
@@ -764,6 +770,30 @@ export default defineGkdApp({
             'https://i.gkd.li/i/15388608',
             'https://i.gkd.li/i/16154341',
           ],
+        },
+        {
+          key: 3,
+          name: '好友动态详情页广告',
+          activityIds: 'com.qzone.reborn.base.QZoneTransparentShellActivity',
+          fastQuery: true,
+          matches: '@[desc="关闭广告"][visibleToUser=true] -3 [text^="活动"]',
+          exampleUrls: 'https://e.gkd.li/b78a3e44-3bd9-445d-9199-e989269c2be3',
+          snapshotUrls: 'https://i.gkd.li/i/17009847',
+        },
+      ],
+    },
+    {
+      key: 31,
+      name: '功能类-授权登录时关闭获取QQ好友关系',
+      rules: [
+        {
+          fastQuery: true,
+          activityIds:
+            'com.tencent.open.agent.PublicFragmentActivityForOpenSDK',
+          matches:
+            '@CompoundButton[checked=true] - RelativeLayout > [text="你的QQ好友关系"]',
+          exampleUrls: 'https://e.gkd.li/4d69a243-6a57-47ca-bc25-0a5353d80179',
+          snapshotUrls: 'https://i.gkd.li/i/16929347',
         },
       ],
     },

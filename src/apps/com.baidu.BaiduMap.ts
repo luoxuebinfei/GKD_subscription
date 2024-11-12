@@ -11,6 +11,7 @@ export default defineGkdApp({
       matchTime: 10000,
       actionMaximum: 1,
       resetMatch: 'app',
+      priorityTime: 10000,
       rules: [
         {
           matches: '[text*="跳过"][text.length<10][visibleToUser=true]',
@@ -136,8 +137,11 @@ export default defineGkdApp({
       rules: [
         {
           activityIds: 'com.baidu.baidumaps.MapsActivity',
-          matches: 'TextView[id="com.baidu.BaiduMap:id/tv_dialog_cancel"]',
-          snapshotUrls: 'https://i.gkd.li/i/13439258',
+          matches: ['[text="添加至桌面"]', '[text="取消"]'],
+          snapshotUrls: [
+            'https://i.gkd.li/i/13439258',
+            'https://i.gkd.li/i/16920986', // 防止误触
+          ],
         },
       ],
     },

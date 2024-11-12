@@ -29,6 +29,21 @@ export default defineGkdApp({
           matches: '@ImageView - RelativeLayout > TextView[text="广告"]',
           snapshotUrls: 'https://i.gkd.li/i/12826288',
         },
+        {
+          key: 2,
+          fastQuery: true,
+          activityIds: 'com.jdd.motorfans.MTMainActivity',
+          matches: '[vid="iv_right_top_close"]',
+          exampleUrls: 'https://e.gkd.li/0f4b8d7d-fda4-43ee-b892-3a85d6dae278',
+          snapshotUrls: 'https://i.gkd.li/i/17002101',
+        },
+        {
+          key: 3,
+          fastQuery: true,
+          activityIds: 'com.jdd.motorfans.MTMainActivity',
+          matches: '[vid="ad_close"]',
+          snapshotUrls: 'https://i.gkd.li/i/17078108',
+        },
       ],
     },
     {
@@ -74,14 +89,18 @@ export default defineGkdApp({
         {
           fastQuery: true,
           activityIds: [
-            'com.jdd.motorfans.MTMainActivity',
+            '.MTMainActivity',
             '.modules.detail.DetailActivity2',
+            '.cars.MotorDetailActivity2',
+            '.modules.carbarn.brand.detail.MBrandDetailActivity',
           ],
           matches: '[vid="close_b_t_a_i_b_no_compliance"]',
           exampleUrls: 'https://e.gkd.li/daf8ea52-a935-4e58-9e27-c5cb28fa9cf0',
           snapshotUrls: [
             'https://i.gkd.li/i/16685033',
             'https://i.gkd.li/i/16859608',
+            'https://i.gkd.li/i/17162753',
+            'https://i.gkd.li/i/17533553',
           ],
         },
       ],
